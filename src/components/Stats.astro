@@ -1,0 +1,54 @@
+<!-- ── Stats Section ── -->
+<section id="stats" class="py-20 sm:py-28 border-t border-border">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        { value: 845, prefix: '#', label: 'HTB Global Ranking' },
+        { value: 195, prefix: '', label: 'Flags resueltas' },
+        { value: 94, prefix: '', label: 'Máquinas comprometidas' },
+        { value: 5, prefix: '', label: 'Certificaciones activas' },
+      ].map((stat) => (
+        <div class="reveal text-center p-6 rounded-lg border border-border bg-surface hover:border-green/30 transition-colors">
+          <p class="font-display font-extrabold text-3xl sm:text-4xl text-green mb-2">
+            <span class="counter" data-target={stat.value} data-prefix={stat.prefix}>
+              {stat.prefix}0
+            </span>
+          </p>
+          <p class="text-text-muted text-sm">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = parseInt(el.dataset.target || '0');
+          const prefix = el.dataset.prefix || '';
+          let current = 0;
+          const duration = 1500;
+          const step = target / (duration / 16);
+
+          const update = () => {
+            current += step;
+            if (current >= target) {
+              el.textContent = prefix + target.toString();
+              return;
+            }
+            el.textContent = prefix + Math.floor(current).toString();
+            requestAnimationFrame(update);
+          };
+          requestAnimationFrame(update);
+          counterObserver.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  counters.forEach((el) => counterObserver.observe(el));
+</script>

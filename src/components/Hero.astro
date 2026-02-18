@@ -1,0 +1,60 @@
+<!-- ── Hero Section ── -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center scanline overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+    <!-- Terminal prompt decoration -->
+    <p class="text-green text-sm font-mono mb-6 opacity-80">
+      <span class="text-text-muted">┌──(</span>m3m1g<span class="text-text-muted">㉿</span>sec<span class="text-text-muted">)-[</span>~<span class="text-text-muted">]</span>
+    </p>
+
+    <!-- Headline -->
+    <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+      Offensive Security · HTB
+      <span class="text-green">#845</span> Global ·
+      <span class="text-green">5</span> certs ·
+      <span class="text-green">1</span> obsesión
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-text-muted text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+      Pentester especializado en explotación real.
+      Web, mobile, Active Directory, cloud.
+      Aquí documento lo que aprendo y lo que rompo.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+      <a
+        href="#projects"
+        class="px-6 py-3 bg-green text-bg font-bold text-sm rounded hover:bg-green-dim transition-colors duration-200"
+      >
+        Ver proyectos
+      </a>
+      <a
+        href="#contact"
+        class="px-6 py-3 border border-green text-green font-bold text-sm rounded hover:bg-green/10 transition-colors duration-200"
+      >
+        Contactar
+      </a>
+    </div>
+
+    <!-- Badge strip -->
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      {['CPTS', 'eCPPTv3', 'CRTA', 'PT1', 'CWEE in progress'].map((badge) => (
+        <span class={`px-3 py-1 text-xs font-mono rounded border ${
+          badge === 'CWEE in progress'
+            ? 'border-green/40 text-green/70 bg-green/5'
+            : 'border-border text-text-muted bg-surface'
+        }`}>
+          {badge}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>

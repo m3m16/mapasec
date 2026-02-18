@@ -1,0 +1,65 @@
+---
+const projects = [
+  {
+    title: 'Cybersecurity Blog',
+    description: 'Write-ups técnicos de máquinas y challenges de Hack The Box.',
+    tags: ['HTB', 'Write-ups', 'Markdown'],
+    link: 'https://m3m16.github.io/',
+  },
+  {
+    title: 'HTB Profile',
+    description: '#845 global · 195 flags · 94 máquinas comprometidas. Perfil público verificable en Hack The Box.',
+    tags: ['HTB', 'Pentesting', 'CTF'],
+    link: 'https://app.hackthebox.com/users/2025556',
+  },
+  {
+    title: 'Recon & Automation Scripts',
+    description: 'Scripts propios en Python y Bash para automatizar fases de reconocimiento, enumeración y descubrimiento de superficie de ataque.',
+    tags: ['Python', 'Bash', 'Automation'],
+    link: 'https://github.com/m3m16',
+  },
+  {
+    title: 'HTB Academy — Penetration Testing Paths',
+    description: 'Completado el path CPTS y CWEE contra la empresa ficticia Inlanefreight. Reconocimiento avanzado, explotación, escalada de privilegios y pivoting.',
+    tags: ['CPTS', 'Web', 'Active Directory'],
+  },
+];
+---
+
+<!-- ── Projects Section ── -->
+<section id="projects" class="py-20 sm:py-28 border-t border-border">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="reveal">
+      <p class="text-green text-sm font-mono mb-2">// projects</p>
+      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-10">Proyectos</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {projects.map((project) => (
+        <div class="reveal glow-card p-6 rounded-lg border border-border bg-surface group">
+          <div class="flex items-start justify-between mb-3">
+            <!-- Folder icon -->
+            <svg class="w-8 h-8 text-green opacity-60 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            {project.link && (
+              <a href={project.link} target="_blank" rel="noopener"
+                class="text-text-muted hover:text-green transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
+          </div>
+          <h3 class="font-bold text-text mb-2">{project.title}</h3>
+          <p class="text-text-muted text-sm leading-relaxed mb-4">{project.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class="text-xs text-green/70 font-mono">{tag}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+const certs = [
+  { name: 'HTB Certified Penetration Testing Specialist (CPTS)', issuer: 'Hack The Box' },
+  { name: 'eLearnSecurity Certified Professional Penetration Tester (eCPPTv3)', issuer: 'eLearnSecurity' },
+  { name: 'Red Team Analyst (CRTA)', issuer: 'Certified RedTeam Professional' },
+  { name: 'Junior Penetration Tester PT1', issuer: 'TCM Security' },
+  { name: 'eLearnSecurity Junior Penetration Tester (eJPTv2)', issuer: 'eLearnSecurity' },
+  { name: 'HTB Certified Web Exploitation Expert (HTB CWEE)', issuer: 'Hack The Box', inProgress: true },
+];
+---
+
+<!-- ── Certifications Section ── -->
+<section id="certifications" class="py-20 sm:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="reveal">
+      <p class="text-green text-sm font-mono mb-2">// certifications</p>
+      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-10">Certificaciones</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {certs.map((cert) => (
+        <div class="reveal glow-card p-5 rounded-lg border border-border bg-surface relative group">
+          {cert.inProgress && (
+            <span class="absolute top-3 right-3 px-2 py-0.5 text-xs font-mono bg-green/10 text-green border border-green/30 rounded">
+              In Progress
+            </span>
+          )}
+          <!-- Cert icon -->
+          <div class="w-8 h-8 flex items-center justify-center text-green mb-3 opacity-60 group-hover:opacity-100 transition-opacity">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-text leading-snug mb-1">{cert.name}</h3>
+          <p class="text-xs text-text-muted">{cert.issuer}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+const skillGroups = [
+  {
+    title: 'Offensive Security',
+    items: ['Web App Pentesting', 'Mobile Pentesting (Android/iOS)', 'Network Pentesting', 'Active Directory Attacks', 'Cloud Security (AWS)'],
+  },
+  {
+    title: 'Tools',
+    items: ['Burp Suite', 'Nmap', 'Metasploit', 'BloodHound', 'Nessus', 'OpenVAS', 'ffuf', 'Impacket', 'Netcat'],
+  },
+  {
+    title: 'Scripting & Dev',
+    items: ['Python', 'Bash', 'PowerShell', 'PHP', 'SQL'],
+  },
+  {
+    title: 'Infrastructure',
+    items: ['Docker', 'Kubernetes', 'AWS EKS', 'Proxmox', 'VMware', 'Fortinet', 'Active Directory'],
+  },
+  {
+    title: 'Methodologies',
+    items: ['OWASP Top 10', 'PTES', 'MITRE ATT&CK'],
+  },
+];
+---
+
+<!-- ── Skills Section ── -->
+<section id="skills" class="py-20 sm:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="reveal">
+      <p class="text-green text-sm font-mono mb-2">// skills</p>
+      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-10">Habilidades</h2>
+    </div>
+
+    <div class="space-y-8">
+      {skillGroups.map((group) => (
+        <div class="reveal">
+          <h3 class="text-sm text-green font-mono mb-3">{group.title}</h3>
+          <div class="flex flex-wrap gap-2">
+            {group.items.map((item) => (
+              <span class="px-3 py-1.5 text-sm bg-surface border border-border rounded text-text-muted hover:text-green hover:border-green/40 transition-colors cursor-default">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

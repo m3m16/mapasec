@@ -1,0 +1,83 @@
+---
+const jobs = [
+  {
+    title: 'Penetration Tester',
+    company: 'Dekra Digital & Product Solutions',
+    period: 'Septiembre 2025 – Presente',
+    location: 'Málaga, España',
+    tasks: [
+      'Auditorías de seguridad en infraestructuras cloud y servicios desplegados',
+      'Pentesting de aplicaciones móviles Android e iOS: lógica de negocio, comunicaciones, almacenamiento',
+      'Programa de pentesting continuo sobre activos propios bajo metodología bug bounty',
+      'Desarrollo de scripts avanzados de reconocimiento y automatización de superficie de ataque',
+      'Documentación técnica con priorización de riesgos y recomendaciones orientadas a negocio',
+    ],
+  },
+  {
+    title: 'Systems Technician',
+    company: 'Pulsia Technology',
+    period: 'Septiembre 2024 – Noviembre 2024',
+    location: 'Jaén, España',
+    tasks: [
+      'Administración de reglas de firewall y switching de red (Fortinet)',
+      'Gestión de usuarios y grupos en Active Directory',
+    ],
+  },
+  {
+    title: 'Systems Technician',
+    company: 'Agencia Digital de Andalucía',
+    period: 'Marzo 2024 – Junio 2024',
+    location: 'Jaén, España',
+    tasks: [
+      'Implementación de Proxmox con mejora de rendimiento del 75%',
+      'Despliegue de servidor en AWS con Amazon EKS',
+      'Desarrollo de scripts PowerShell y Bash para automatización de sistemas',
+    ],
+  },
+];
+---
+
+<!-- ── Experience Section ── -->
+<section id="experience" class="py-20 sm:py-28 border-t border-border">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="reveal">
+      <p class="text-green text-sm font-mono mb-2">// experience</p>
+      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-10">Experiencia</h2>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-4 sm:left-5 top-0 bottom-0 w-px bg-border"></div>
+
+      <div class="space-y-10">
+        {jobs.map((job, i) => (
+          <div class="reveal relative pl-12 sm:pl-14">
+            <!-- Timeline dot -->
+            <div class={`absolute left-2.5 sm:left-3.5 top-1.5 w-3 h-3 rounded-full border-2 ${
+              i === 0 ? 'bg-green border-green' : 'bg-bg border-border'
+            }`}></div>
+
+            <div>
+              <h3 class="font-display font-bold text-lg text-text">
+                {job.title}
+                <span class="text-green"> · </span>
+                <span class="text-text-muted font-normal text-base">{job.company}</span>
+              </h3>
+              <p class="text-text-muted text-sm mt-1">{job.period} · {job.location}</p>
+
+              <ul class="mt-4 space-y-2">
+                {job.tasks.map((task) => (
+                  <li class="text-text-muted text-sm flex items-start gap-2">
+                    <span class="text-green mt-0.5 shrink-0">▹</span>
+                    <span>{task}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
