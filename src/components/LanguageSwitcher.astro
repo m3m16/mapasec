@@ -1,0 +1,43 @@
+<div class="flex items-center font-mono text-xs border border-border rounded overflow-hidden">
+  <button
+    data-lang-btn="es"
+    class="px-2 py-1 transition-colors hover:text-green cursor-pointer"
+    aria-label="Español"
+  >
+    ES
+  </button>
+  <span class="text-border select-none">|</span>
+  <button
+    data-lang-btn="en"
+    class="px-2 py-1 transition-colors hover:text-green cursor-pointer"
+    aria-label="English"
+  >
+    EN
+  </button>
+</div>
+
+<script>
+  import { applyTranslations, getCurrentLang } from '../i18n/i18n';
+
+  function updateButtons(activeLang: string) {
+    document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
+      const isActive = btn.getAttribute('data-lang-btn') === activeLang;
+      btn.classList.toggle('text-green', isActive);
+      btn.classList.toggle('text-text-muted', !isActive);
+    });
+  }
+
+  // Apply saved language and set button state on load
+  const currentLang = getCurrentLang();
+  applyTranslations(currentLang);
+  updateButtons(currentLang);
+
+  // Handle clicks
+  document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang-btn') as 'es' | 'en';
+      applyTranslations(lang);
+      updateButtons(lang);
+    });
+  });
+</script>

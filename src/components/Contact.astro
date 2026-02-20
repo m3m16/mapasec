@@ -3,25 +3,27 @@
   <div class="max-w-2xl mx-auto px-4 sm:px-6">
     <div class="reveal">
       <p class="text-green text-sm font-mono mb-2">// contact</p>
-      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-3">Contacto</h2>
-      <p class="text-text-muted mb-10">
+      <h2 data-i18n="contact.heading" class="font-display font-bold text-2xl sm:text-3xl mb-3">Contacto</h2>
+      <p data-i18n="contact.subtitle" class="text-text-muted mb-10">
         ¿Tienes un proyecto en mente o necesitas una auditoría? Escríbeme.
       </p>
     </div>
 
-    <!-- Form (action ready for Formspree — replace YOUR_FORM_ID) -->
     <form
       action="https://formspree.io/f/xlgwlvpg"
       method="POST"
       class="reveal space-y-5"
     >
       <div>
-        <label for="name" class="block text-sm text-text-muted mb-1.5">Nombre</label>
+        <label for="name" class="block text-sm text-text-muted mb-1.5">
+          <span data-i18n="contact.name">Nombre</span>
+        </label>
         <input
           type="text"
           id="name"
           name="name"
           required
+          data-i18n-placeholder="contact.namePlaceholder"
           class="w-full bg-surface border border-border rounded px-4 py-3 text-sm text-text placeholder-text-muted/50 focus:outline-none focus:border-green transition-colors"
           placeholder="Tu nombre"
         />
@@ -40,12 +42,15 @@
       </div>
 
       <div>
-        <label for="message" class="block text-sm text-text-muted mb-1.5">Mensaje</label>
+        <label for="message" class="block text-sm text-text-muted mb-1.5">
+          <span data-i18n="contact.message">Mensaje</span>
+        </label>
         <textarea
           id="message"
           name="message"
           rows="5"
           required
+          data-i18n-placeholder="contact.messagePlaceholder"
           class="w-full bg-surface border border-border rounded px-4 py-3 text-sm text-text placeholder-text-muted/50 focus:outline-none focus:border-green transition-colors resize-none"
           placeholder="¿En qué puedo ayudarte?"
         ></textarea>
@@ -53,6 +58,7 @@
 
       <button
         type="submit"
+        data-i18n="contact.submit"
         class="w-full sm:w-auto px-8 py-3 bg-green text-bg font-bold text-sm rounded hover:bg-green-dim transition-colors duration-200 cursor-pointer"
       >
         Enviar mensaje

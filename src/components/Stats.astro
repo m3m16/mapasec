@@ -4,9 +4,9 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
       {[
         { value: 845, prefix: '#', label: 'HTB Global Ranking' },
-        { value: 195, prefix: '', label: 'Flags resueltas' },
-        { value: 94, prefix: '', label: 'Máquinas comprometidas' },
-        { value: 5, prefix: '', label: 'Certificaciones activas' },
+        { value: 195, prefix: '', label: 'Flags resueltas', i18nKey: 'stats.flags' },
+        { value: 94, prefix: '', label: 'Máquinas comprometidas', i18nKey: 'stats.machines' },
+        { value: 5, prefix: '', label: 'Certificaciones activas', i18nKey: 'stats.certs' },
       ].map((stat) => (
         <div class="reveal text-center p-6 rounded-lg border border-border bg-surface hover:border-green/30 transition-colors">
           <p class="font-display font-extrabold text-3xl sm:text-4xl text-green mb-2">
@@ -14,7 +14,7 @@
               {stat.prefix}0
             </span>
           </p>
-          <p class="text-text-muted text-sm">{stat.label}</p>
+          <p class="text-text-muted text-sm" data-i18n={stat.i18nKey}>{stat.label}</p>
         </div>
       ))}
     </div>

@@ -42,7 +42,7 @@ const jobs = [
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <div class="reveal">
       <p class="text-green text-sm font-mono mb-2">// experience</p>
-      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-10">Experiencia</h2>
+      <h2 data-i18n="experience.heading" class="font-display font-bold text-2xl sm:text-3xl mb-10">Experiencia</h2>
     </div>
 
     <!-- Timeline -->
@@ -64,13 +64,17 @@ const jobs = [
                 <span class="text-green"> · </span>
                 <span class="text-text-muted font-normal text-base">{job.company}</span>
               </h3>
-              <p class="text-text-muted text-sm mt-1">{job.period} · {job.location}</p>
+              <p class="text-text-muted text-sm mt-1">
+                <span data-i18n={`experience.job${i}.period`}>{job.period}</span>
+                {' · '}
+                <span data-i18n={`experience.job${i}.location`}>{job.location}</span>
+              </p>
 
               <ul class="mt-4 space-y-2">
-                {job.tasks.map((task) => (
+                {job.tasks.map((task, taskIdx) => (
                   <li class="text-text-muted text-sm flex items-start gap-2">
                     <span class="text-green mt-0.5 shrink-0">▹</span>
-                    <span>{task}</span>
+                    <span data-i18n={`experience.job${i}.task${taskIdx}`}>{task}</span>
                   </li>
                 ))}
               </ul>

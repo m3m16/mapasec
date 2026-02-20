@@ -31,11 +31,11 @@ const projects = [
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
     <div class="reveal">
       <p class="text-green text-sm font-mono mb-2">// projects</p>
-      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-10">Proyectos</h2>
+      <h2 data-i18n="projects.heading" class="font-display font-bold text-2xl sm:text-3xl mb-10">Proyectos</h2>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-      {projects.map((project) => (
+      {projects.map((project, i) => (
         <div class="reveal glow-card p-6 rounded-lg border border-border bg-surface group">
           <div class="flex items-start justify-between mb-3">
             <!-- Folder icon -->
@@ -52,7 +52,7 @@ const projects = [
             )}
           </div>
           <h3 class="font-bold text-text mb-2">{project.title}</h3>
-          <p class="text-text-muted text-sm leading-relaxed mb-4">{project.description}</p>
+          <p data-i18n={`projects.${i}.desc`} class="text-text-muted text-sm leading-relaxed mb-4">{project.description}</p>
           <div class="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span class="text-xs text-green/70 font-mono">{tag}</span>
