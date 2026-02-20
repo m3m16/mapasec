@@ -82,3 +82,21 @@ body {
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
   border-color: var(--color-green) !important;
 }
+
+/* ── Blinking cursor ── */
+.cursor-blink {
+  animation: blink 1s step-start infinite;
+}
+@keyframes blink {
+  0%, 49.9% { opacity: 1; }
+  50%, 100%  { opacity: 0; }
+}
+
+/* ── 404 terminal line reveal ── */
+.terminal-line {
+  opacity: 0;
+  animation: line-appear 0.05s forwards;
+}
+@keyframes line-appear {
+  to { opacity: 1; }
+}

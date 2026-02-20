@@ -39,11 +39,28 @@ const {
     <title>{title}</title>
   </head>
   <body class="bg-bg text-text min-h-screen">
+    <!-- Scroll progress bar -->
+    <div
+      id="scroll-progress"
+      class="fixed top-0 left-0 z-[60] h-0.5 bg-green pointer-events-none"
+      style="width: 0%"
+    ></div>
+
     <Nav />
     <main>
       <slot />
     </main>
     <Footer />
+
+    <!-- Scroll progress update -->
+    <script>
+      const bar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrolled =
+          window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        if (bar) bar.style.width = `${Math.min(scrolled * 100, 100)}%`;
+      }, { passive: true });
+    </script>
 
     <!-- Intersection Observer for scroll reveal -->
     <script>

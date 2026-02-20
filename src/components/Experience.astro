@@ -68,6 +68,12 @@ const jobs = [
                 <span data-i18n={`experience.job${i}.period`}>{job.period}</span>
                 {' · '}
                 <span data-i18n={`experience.job${i}.location`}>{job.location}</span>
+                {i === 0 && (
+                  <>
+                    {' · '}
+                    <span data-i18n-duration="2025-09" class="text-green/70"></span>
+                  </>
+                )}
               </p>
 
               <ul class="mt-4 space-y-2">

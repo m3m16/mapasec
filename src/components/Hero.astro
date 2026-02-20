@@ -17,10 +17,11 @@
       <span class="text-green">1</span> obsesión
     </h1>
 
-    <!-- Subtitle -->
+    <!-- Subtitle — target for typewriter -->
     <p
+      id="hero-subtitle"
       data-i18n="hero.subtitle"
-      class="text-text-muted text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
+      class="text-text-muted text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed min-h-[3.5rem]"
     >
       Pentester especializado en explotación real.
       Web, mobile, Active Directory, cloud.
@@ -66,3 +67,49 @@
     </svg>
   </div>
 </section>
+
+<script>
+  function startTypewriter(el: HTMLElement) {
+    const text = el.textContent?.trim() ?? '';
+    if (!text) return;
+
+    el.textContent = '';
+
+    // Blinking cursor
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor-blink text-green';
+    cursor.textContent = '_';
+    el.appendChild(cursor);
+
+    let i = 0;
+    const speed = 28; // ms per character
+
+    function typeNext() {
+      if (i < text.length) {
+        el.insertBefore(document.createTextNode(text[i]), cursor);
+        i++;
+        setTimeout(typeNext, speed);
+      }
+      // cursor keeps blinking when done
+    }
+
+    setTimeout(typeNext, speed);
+  }
+
+  // Run after i18n translations have been applied (handles both ES and EN)
+  const subtitle = document.getElementById('hero-subtitle') as HTMLElement | null;
+  if (subtitle) {
+    let started = false;
+
+    const tryStart = () => {
+      if (started) return;
+      started = true;
+      startTypewriter(subtitle);
+    };
+
+    // If i18n:applied fires before this listener is registered, fall back to setTimeout
+    document.addEventListener('i18n:applied', tryStart, { once: true });
+    // Safety fallback — ensures typewriter runs even if event was missed
+    setTimeout(tryStart, 150);
+  }
+</script>

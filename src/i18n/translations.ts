@@ -54,6 +54,12 @@ export const translations: Record<Lang, Record<string, string>> = {
     'knowledge.notes.cta': 'Abrir GitBook →',
     'knowledge.writeups.desc': 'Resoluciones detalladas de máquinas Hack The Box con metodología paso a paso. Linux, Windows, técnicas de escalada, explotación web y más. +10 máquinas documentadas.',
     'knowledge.writeups.cta': 'Ver write-ups →',
+    // Duration units
+    'duration.year_one': 'año',
+    'duration.year_other': 'años',
+    'duration.month_one': 'mes',
+    'duration.month_other': 'meses',
+    'duration.less': 'menos de un mes',
     // Contact
     'contact.heading': 'Contacto',
     'contact.subtitle': '¿Tienes un proyecto en mente o necesitas una auditoría? Escríbeme.',
@@ -116,6 +122,12 @@ export const translations: Record<Lang, Record<string, string>> = {
     'knowledge.notes.cta': 'Open GitBook →',
     'knowledge.writeups.desc': 'Detailed Hack The Box machine write-ups with step-by-step methodology. Linux, Windows, escalation techniques, web exploitation, and more. 10+ machines documented.',
     'knowledge.writeups.cta': 'View write-ups →',
+    // Duration units
+    'duration.year_one': 'year',
+    'duration.year_other': 'years',
+    'duration.month_one': 'month',
+    'duration.month_other': 'months',
+    'duration.less': 'less than a month',
     // Contact
     'contact.heading': 'Contact',
     'contact.subtitle': 'Have a project in mind or need an audit? Write to me.',
