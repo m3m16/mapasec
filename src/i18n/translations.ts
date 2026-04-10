@@ -11,7 +11,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     'nav.knowledge': 'Notas',
     // About
     'about.heading': 'Sobre mí',
-    'about.p1': 'De administrador de sistemas a pentester ofensivo en menos de un año. No fue un cambio de carrera, fue encontrar el lado correcto de la infraestructura.',
+    'about.p1': 'Pentester ofensivo especializado en seguridad web, mobile y Active Directory. Me formo continuamente a través de HackTheBox, PortSwigger Web Security Academy y programas de bug bounty, aplicando lo aprendido en entornos y activos reales.',
     'about.p2': 'Actualmente en <span class="text-text">Dekra Digital & Product Solutions</span>, donde realizo pruebas de intrusión en cloud, mobile y activos corporativos. Antes gestioné la infraestructura que ahora sé cómo comprometer.',
     'about.p3': 'Lo que me diferencia no es el número de certificaciones, sino que entiendo tanto el lado del atacante como el del equipo que tiene que arreglarlo.',
     // Stats
@@ -46,6 +46,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     'projects.1.desc': '#845 global · 195 flags · 94 máquinas comprometidas. Perfil público verificable en Hack The Box.',
     'projects.2.desc': 'Scripts propios en Python y Bash para automatizar fases de reconocimiento, enumeración y descubrimiento de superficie de ataque.',
     'projects.3.desc': 'Completado el path CPTS y CWEE contra la empresa ficticia Inlanefreight. Reconocimiento avanzado, explotación, escalada de privilegios y pivoting.',
+    'projects.4.desc': 'Aplicación web gratuita para la comunidad que facilita la generación de checklists orientadas a Pentesting. Polivalente para diferentes ámbitos de auditoría.',
     // Knowledge
     'knowledge.heading': 'Conocimiento público',
     'knowledge.subtitle': 'Lo que aprendo, lo documento. Aquí tienes acceso directo a mis recursos técnicos.',
@@ -79,7 +80,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     'nav.knowledge': 'Notes',
     // About
     'about.heading': 'About me',
-    'about.p1': "From systems administrator to offensive pentester in less than a year. It wasn't a career change — it was finding the right side of the infrastructure.",
+    'about.p1': 'Offensive pentester specialized in web security, mobile, and Active Directory. I continuously train through HackTheBox, PortSwigger Web Security Academy, and bug bounty programs, applying what I learn in real-world assets and environments.',
     'about.p2': 'Currently at <span class="text-text">Dekra Digital & Product Solutions</span>, where I perform penetration testing on cloud, mobile, and corporate assets. Previously I managed the infrastructure I now know how to compromise.',
     'about.p3': "What sets me apart isn't the number of certifications, but that I understand both the attacker's perspective and the team that has to fix it.",
     // Stats
@@ -114,6 +115,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     'projects.1.desc': '#845 global · 195 flags · 94 machines compromised. Publicly verifiable profile on Hack The Box.',
     'projects.2.desc': 'Custom Python and Bash scripts to automate reconnaissance, enumeration, and attack surface discovery phases.',
     'projects.3.desc': 'Completed CPTS and CWEE paths against the fictional company Inlanefreight. Advanced reconnaissance, exploitation, privilege escalation and pivoting.',
+    'projects.4.desc': 'Free web application for the community that helps generate checklists oriented to Pentesting. Versatile for different auditing scopes.',
     // Knowledge
     'knowledge.heading': 'Public Knowledge',
     'knowledge.subtitle': 'What I learn, I document. Here you have direct access to my technical resources.',
